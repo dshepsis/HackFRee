@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Presentation - HackFRee 2018</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -24,8 +24,31 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown id="cover">
+					<textarea data-template>
+						# Break it Down!
+
+						A brief guide on turning a problem into a working solution in code.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Who am I?
+
+						My name is Daniel Shepsis.
+						* Science & Engineering Class of 2015
+						* Junior at Rutgers University
+						* Chemical Engineering Major
+						* Inventor of the Pokémon AI
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## What am I going to teach you?
+
+						Taking a problem and turning it into code.
+					</textarea>
+				</section>
 			</div>
 		</div>
 
@@ -42,8 +65,11 @@
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
+				],
+				history: true
 			});
+			Reveal.configure({ slideNumber: true });
+			Reveal.configure({ slideNumber: 'c/t' });
 		</script>
 	</body>
 </html>
