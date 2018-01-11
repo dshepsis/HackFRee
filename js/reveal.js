@@ -1,3 +1,4 @@
+/* eslint-disable */
 /*!
  * reveal.js
  * http://revealjs.com
@@ -3712,7 +3713,8 @@
 				v = parseInt( bits[1], 10 ) || 0;
 
 			if( h !== indexh || v !== indexv ) {
-				slide( h, v );
+				// @MODIFIED Subtracting 1 so that url matches slide number in interface
+				slide( h-1, v-1 );
 			}
 		}
 
@@ -3751,10 +3753,10 @@
 				}
 				// Otherwise use the /h/v index
 				else {
-					if( indexh > 0 || indexv > 0 ) url += indexh;
-					if( indexv > 0 ) url += '/' + indexv;
+					// @MODIFIED Adding 1 so that url matches slide number in interface
+					if( indexh > 0 || indexv > 0 ) url += (Number(indexh) +1);
+					if( indexv > 0 ) url += '/' + (Number(indexv) +1);
 				}
-
 				window.location.hash = url;
 			}
 		}

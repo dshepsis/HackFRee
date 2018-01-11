@@ -24,7 +24,7 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-markdown id="cover">
+				<section data-markdown>
 					<textarea data-template>
 						# Break it Down!
 
@@ -33,9 +33,9 @@
 				</section>
 				<section data-markdown>
 					<textarea data-template>
-						## Who am I?
+						## I am:
 
-						My name is Daniel Shepsis.
+						Daniel Shepsis
 						* Science & Engineering Class of 2015
 						* Junior at Rutgers University
 						* Chemical Engineering Major
@@ -44,10 +44,15 @@
 				</section>
 				<section data-markdown>
 					<textarea data-template>
-						## What am I going to teach you?
+						## I am going to teach you:
 
-						Taking a problem and turning it into code.
+						How to take a problem and turn it into code.
 					</textarea>
+				</section>
+
+				<section>
+					<section>Vertical Slide 1</section>
+					<section>Vertical Slide 2</section>
 				</section>
 			</div>
 		</div>
@@ -66,7 +71,9 @@
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				],
-				history: true
+				history: true,
+				hideAddressBar: true,
+				mouseWheel: true
 			});
 			Reveal.configure({ slideNumber: true });
 			Reveal.configure({ slideNumber: 'c/t' });
