@@ -29,6 +29,20 @@ img.centerpiece {
 }
 
 .reveal .lang-comp-block pre {
-  font-size: 0.8em;
+  font-size: 0.7em;
   padding: 0.3em;
+}
+
+.reveal pre {
+  font-size: 0.7em;
+}
+
+.reveal .slides section .fragment.highlight {
+  visibility: visible;
+  opacity: 1;
+  color: inherit;
+
+}
+.reveal .slides section .fragment.highlight.visible {
+  color: hsla(60, 100%, 80%, 1);
 }

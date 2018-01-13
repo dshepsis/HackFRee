@@ -118,7 +118,7 @@
 					</div>
 				</section>
 
-				<section class="lang-comp">
+				<section class="lang-comp-line">
 					<section class="java">
 						<h2>Code Differences: Java</h2>
 						<pre>(i % 3 == 0) || (i % 5 == 0)</pre>
@@ -149,7 +149,7 @@
 					<pre class="fragment"><code class="JavaScript">for (let i = 0; i < 1000; ++i)</code></pre>
 				</section>
 
-				<section class="lang-comp">
+				<section class="lang-comp-line">
 					<section class="java">
 						<h2>Code Differences: Java</h2>
 						<pre><code class="Java">for (int i = 1; i < 1000; ++i) {</code></pre>
@@ -218,6 +218,170 @@ for i in range(1, 1000):
   if ((i % 3 == 0) or (i % 5 == 0)):
     sum += i</code></pre>
 					</section>
+				</section>
+
+				<section>
+					<h2>What we've done:</h2>
+					<ul>
+						<li class="fragment">State the problem clearly.</li>
+						<li class="fragment">Break the problem into discrete steps</li>
+						<li class="fragment">For each step, find its equivalent in code.</li>
+				</section>
+
+				<section>
+					<h2>Going further</h2>
+					<p>Is there a better approach?</p>
+				</section>
+
+				<section>
+					<h2>A better approach</h2>
+					<p>Don't search, generate.</p>
+				</section>
+
+				<section>
+					<h2>Generating:</h2>
+					<pre><code class="C++">int sum2 = 0;
+for (int i = 3; i < 1000; i += 3) {
+  sum2 += i;
+}
+for (int i = 5; i < 1000; i += 5) {
+  sum2 += i;
+}</code></pre>
+				</section>
+
+				<section>
+					<h2>Generating: (Fixed)</h2>
+					<pre><code class="C++">int sum2 = 0;
+for (int i = 3; i < 1000; i += 3) {
+  sum2 += i;
+}
+for (int i = 5; i < 1000; i += 5) {
+  sum2 += i;
+}
+for (int i = 15; i < 1000; i += 15) {
+  sum2 -= i;
+}</code></pre>
+				</section>
+
+				<section class="lang-comp-block">
+					<section class="java">
+						<h2>Code Differences: Java</h2>
+						<pre><code class="Java">int sum2 = 0;
+for (int i = 3; i < 1000; i += 3) {
+  sum2 += i;
+}
+for (int i = 5; i < 1000; i += 5) {
+  sum2 += i;
+}
+for (int i = 15; i < 1000; i += 15) {
+  sum2 -= i;
+}
+System.out.println(sum2);</code></pre>
+					</section>
+					<section class="cpp">
+						<h2>Code Differences: C++</h2>
+						<pre><code class="C++">int sum2 = 0;
+for (int i = 3; i < 1000; i += 3) {
+  sum2 += i;
+}
+for (int i = 5; i < 1000; i += 5) {
+  sum2 += i;
+}
+for (int i = 15; i < 1000; i += 15) {
+  sum2 -= i;
+}
+cout << sum2;</code></pre>
+					</section>
+					<section class="javascript">
+						<h2>Code Differences: JavaScript</h2>
+						<pre><code class="JavaScript">let sum2 = 0;
+for (let i = 3; i < COUNT_TO; i += 3) {
+  sum2 += i;
+}
+for (let i = 5; i < COUNT_TO; i += 5) {
+  sum2 += i;
+}
+for (let i = 15; i < COUNT_TO; i += 15) {
+  sum2 -= i;
+}
+console.log(sum2);</code></pre>
+					</section>
+					<section class="python">
+						<h2>Code Differences: Python</h2>
+						<pre><code class="Python">sum2 = 0
+for i in range(3, COUNT_TO, 3):
+	sum2 += i
+for i in range(5, COUNT_TO, 5):
+	sum2 += i
+for i in range(15, COUNT_TO, 15):
+	sum2 -= i
+print(sum2)</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>A more complex problem:</h2>
+					<p class="fragment">The <span class="highlight">Pokémon</span> AI</p>
+				</section>
+
+				<section>
+					<h2>The Pokémon AI -<br/>Problem Statement</h2>
+					<p>Make an AI that can competitively battle against humans in Pokémon.</p>
+				</section>
+
+				<section>
+					<h2>The Pokémon AI -<br/>Breakdown</h2>
+					<p>
+						[Make an AI]<br />
+						[that can competitively battle]<br />
+						[against humans]<br />
+						<span class="fragment highlight">[in Pokémon.]</span>
+					</p>
+				</section>
+
+				<section>
+					<h2>The Pokémon AI</h2>
+					<p>
+						"in Pokémon" &rarr; How do I make a program play Pokémon?
+					</p>
+				</section>
+
+				<section>
+					<h2>The Pokémon AI</h2>
+					<p>
+						Options:
+					</p>
+					<ul>
+						<li>Make a robot to push buttons on an actual game console</li>
+						<li>Make the program give inputs to an emulator</li>
+						<li class="fragment highlight">Use the Pokémon Showdown simulator</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Pokémon Showdown!</h2>
+					<img class="centerpiece" src="img/pokemonShowdown.png" />
+					<a href="https://play.pokemonshowdown.com" target="_blank">https://play.pokemonshowdown.com</a>
+				</section>
+
+				<section>
+					<h2>Pokémon Showdown!</h2>
+					<p>A web-app that simulates Pokémon battles between people</p>
+				</section>
+
+				<section>
+					<h2>To use a web-app:</h2>
+					<ul>
+						<li>Make the program send mouse and keyboard inputs to mimic a human</li>
+						<li>Use accessibility features</li>
+						<li class="fragment highlight">Do further research</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Research</h2>
+					<img class="centerpiece" src="img/googleSearch.png" />
+					<p>Just Google it</p>
 				</section>
 
 				<section data-markdown>
