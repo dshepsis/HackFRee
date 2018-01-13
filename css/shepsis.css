@@ -23,7 +23,12 @@ img.centerpiece {
   font-size: 0.7em;
 }
 
-.reveal .lang-comp pre {
+.reveal .lang-comp-line pre {
   font-size: 1em;
+  padding: 0.3em;
+}
+
+.reveal .lang-comp-block pre {
+  font-size: 0.8em;
   padding: 0.3em;
 }
