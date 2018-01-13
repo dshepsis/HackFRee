@@ -37,7 +37,7 @@
 					<textarea data-template>
 						## I am:
 
-						Daniel Shepsis
+						<span class="greenText">Daniel Shepsis</span>
 						* Science & Engineering Class of 2015
 						* Junior at Rutgers University
 						* Chemical Engineering Major
@@ -70,11 +70,109 @@
 					</p>
 				</section>
 
+				<section>
+					<h2>Why?</h2>
+					<p>
+						These problems are universal.
+					</p>
+				</section>
+
+				<section>
+					<h2>Problem 1:<br />Multiples of 3 and 5</h2>
+					<p>
+						If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+					</p>
+					<p class="highlight">
+						Find the sum of all the multiples of 3 or 5 below 1000.
+					</p>
+				</section>
+
+				<section>
+					<h2>Breaking it into parts:</h2>
+					<p>
+						[Find the sum]<br />[of all the]<br />[multiples of 3 or 5]<br />[below 1000].
+					</p>
+				</section>
+
+				<section>
+					<h2>Pick a part:</h2>
+					<p>
+						[Find the sum]<br />
+						[of all the]<br />
+						<span class="highlight">[multiples of 3 or 5]</span><br />
+						[below 1000].
+					</p>
+				</section>
+
+				<section>
+					<h2>Turn it into code:</h2>
+					<p class="fragment">
+						"multiples of" &rarr; <span class="highlight fragment">%</span>
+					</p>
+					<p class="fragment">
+						"multiples of 3" &rarr; <span class="highlight fragment">i % 3</span>
+					</p>
+					<div class="fragment inline-code">
+						<p>"multiples of 3 or 5" &rarr;</p>
+						<pre class="highlight fragment">(i % 3 == 0) || (i % 5 == 0)</pre>
+					</div>
+				</section>
+
+				<section class="lang-comp">
+					<section class="java">
+						<h2>Code Differences: Java</h2>
+						<pre>(i % 3 == 0) || (i % 5 == 0)</pre>
+					</section>
+					<section class="cpp">
+						<h2>Code Differences: C++</h2>
+						<pre>(i % 3 == 0) || (i % 5 == 0)</pre>
+					</section>
+					<section class="javascript">
+						<h2>Code Differences: JavaScript</h2>
+						<pre>(i % 3 <span class="highlight">===</span> 0) || (i % 5 <span class="highlight">===</span> 0)</pre>
+					</section>
+					<section class="python">
+						<h2>Code Differences: Python</h2>
+						<pre>(i % 3 == 0) <span class="highlight">or</span> (i % 5 == 0)</pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>Aside:<br />Language Fundamentals</h2>
+				</section>
+
+				<section>
+					<h2>Turn it into code:</h2>
+					<p class="fragment">
+						"All of the multiples of 3 or 5" &rarr; <span class="highlight fragment">for loop</span>
+					</p>
+					<pre class="fragment"><code class="JavaScript">for (let i = 0; i < 1000; ++i)</code></pre>
+				</section>
+
+				<section class="lang-comp">
+					<section class="java">
+						<h2>Code Differences: Java</h2>
+						<pre><code class="Java">for (int i = 1; i < 1000; ++i) {</code></pre>
+					</section>
+					<section class="cpp">
+						<h2>Code Differences: C++</h2>
+						<pre><code class="C++">for (int i = 1; i < 1000; ++i) {</code></pre>
+					</section>
+					<section class="javascript">
+						<h2>Code Differences: JavaScript</h2>
+						<pre><code class="JavaScript">for (let i = 0; i < 1000; ++i) {</code></pre>
+					</section>
+					<section class="python">
+						<h2>Code Differences: Python</h2>
+						<pre><code class="Python">for i in range(1, 1000):</code></pre>
+					</section>
+				</section>
+
 				<section data-markdown>
 					<textarea data-template>
-						## FINAL
+						## Return:
 
-						Slide
+						Questions? Comments? Concerns?
 					</textarea>
 				</section>
 			</div>
@@ -96,10 +194,11 @@
 				],
 				history: true,
 				hideAddressBar: true,
-				mouseWheel: true
+				mouseWheel: true,
+				transitionSpeed: 'fast', // default/fast/slow
 			});
 			Reveal.configure({ slideNumber: true });
-			Reveal.configure({ slideNumber: 'c/t' });
+			Reveal.configure({ slideNumber: 'h.v' });
 		</script>
 	</body>
 </html>
